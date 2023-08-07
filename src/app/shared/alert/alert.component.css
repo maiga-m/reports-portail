@@ -1,0 +1,6 @@
+.alert{padding:.85rem 1.5rem;border-radius:4px;background:#fff;position:relative;
+    margin-bottom:1rem;border:1px solid transparent}
+.alert-danger{color:#fff;background-color:rgb(192, 48, 48);border-color:rgb(176, 55, 55)}
+.alert-success{color:#fff;background-color:rgb(2, 162, 2);border-color:rgb(58, 223, 58)}
+.alert-warning{color:#fff;background-color:#e4af3b;border-color:#f1b738}
+.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}

@@ -1,0 +1,15 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+       <li class="nav-item"> <a class="nav-link " routerLink=""> <i class="bi bi-grid"></i> <span>Tableau de bord</span> </a></li>
+      
+       <li class="nav-item" *ngFor="let folder of folders">
+
+          <a *ngIf="hasRole(folder.Name)" class="nav-link collapsed" data-bs-target="#dgd" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>{{ folder.Name }}</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+          <ul *ngIf="hasRole(folder.Name)" id="dgd" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             <li *ngFor="let r of folder.catalogItems"> <a [routerLink]="['/show-report', r.Id ]"> <i class="bi bi-circle"></i><span>{{ extractSubString(r.Name) }}</span> </a></li>
+          </ul>
+
+       </li>  
+       
+    </ul>
+ </aside>

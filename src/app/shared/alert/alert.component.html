@@ -1,0 +1,4 @@
+<div *ngIf="message" class="alert alert-{{message.type}} alert-dismissible fade show text-center" role="alert"> 
+    {{message.text}}
+    <button style="border: none; background-color: transparent !important;" type="button" (click)="closeMessage()" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
