@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IFolder } from 'src/app/models/folder.model';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { IPowerBIReport } from 'src/app/models/powerbireport.model';
-import { KeycloakService } from 'keycloak-angular';
-
 export type EntityResponseType = HttpResponse<IFolder>;
 export type EntityArrayResponseType = HttpResponse<IFolder[]>;
 export type EntityArrayResponseTypePB = HttpResponse<IPowerBIReport[]>;

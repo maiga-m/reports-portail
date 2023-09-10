@@ -17,7 +17,7 @@ export class ShowReportComponent implements OnInit {
   urlWithSpaces: string = "";
 
   
-  constructor(private element: ElementRef, private sanitizer: DomSanitizer, private route: ActivatedRoute, private s: PowerBIReportService) { }
+  constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute, private s: PowerBIReportService) { }
 
   ngOnInit(): void {
     
@@ -32,7 +32,9 @@ export class ShowReportComponent implements OnInit {
         this.urlWithSpaces = encodeURIComponent(this.catalogItem!.Path).replace(/ /, "%20");
         this.urlWithSpaces = encodeURIComponent(this.catalogItem!.Path).replace(/%C3%A9/g, "é");
         this.urlWithSpaces = encodeURIComponent(this.catalogItem!.Path).replace(/%2F/g, "/");
-        this.url = "http://localhost:8089/reports/powerbi";
+
+        this.url = this.url;
+
         this.url = `${this.url}${this.urlWithSpaces}?rs:embed=true`;        
       })
     }); 
