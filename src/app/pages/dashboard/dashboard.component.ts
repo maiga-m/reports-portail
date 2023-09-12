@@ -13,7 +13,6 @@ export class DashboardComponent implements OnInit {
 
   folders: IFolder[] = [];
   items:any;
-  url = "http://10.10.1.187/reports/powerbi";
   
   constructor(private sanitizer: DomSanitizer, private elementRef: ElementRef, protected s: FolderService, private keycloackService: KeycloakService) { }
 
@@ -45,9 +44,4 @@ export class DashboardComponent implements OnInit {
     const splitArray = text.split(" - ");
     return splitArray[1] || ""; // Retourne la sous-chaîne ou une chaîne vide si elle est absente
   }
-
-  transform(url: any) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
 }
