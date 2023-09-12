@@ -11,7 +11,7 @@ export type EntityArrayResponseType = HttpResponse<IPowerBIReport[]>;
 })
 export class PowerBIReportService {
 
-  protected resourceUrl = 'http://localhost:8089/reports/api/v2.0/PowerBIReports';
+  protected resourceUrl = 'http://10.10.1.187/reports/api/v2.0/PowerBIReports';
 
   constructor(protected http: HttpClient) {}
 

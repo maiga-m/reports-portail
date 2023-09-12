@@ -26,6 +26,6 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    this.keycloackService.logout("http://localhost:4200");
+    this.keycloackService.logout("http://caisff-bi.mef/");
   }
 }

@@ -15,7 +15,7 @@ export type EntityArrayResponseTypePB = HttpResponse<IPowerBIReport[]>;
 })
 export class FolderService {
 
-  protected resourceUrl = 'http://localhost:8089/reports/api/v2.0/Folders';
+  protected resourceUrl = 'http://10.10.1.187/reports/api/v2.0/Folders';
 
   constructor(protected http: HttpClient) {}
 

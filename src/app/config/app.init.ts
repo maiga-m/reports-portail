@@ -4,7 +4,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
     return () =>
         keycloak.init({
         config: {
-          url: 'http://localhost:8080',
+          url: 'http://10.10.1.187:8080',
           realm: 'caisff-bi',
           clientId: 'caisff-bi-client-id'
         },
@@ -14,7 +14,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
             window.location.origin + '/assets/silent-check-sso.html',
             checkLoginIframe: false
         },
-        bearerExcludedUrls: ["http://localhost:8089"],
+        bearerExcludedUrls: ["http://10.10.1.187:8080"],
         loadUserProfileAtStartUp: true,
         //enableBearerInterceptor: true
       });

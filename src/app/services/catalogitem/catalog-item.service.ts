@@ -10,7 +10,7 @@ export type EntityArrayResponseType = HttpResponse<ICatalogItem[]>;
 })
 export class CatalogItemService {
 
-  protected resourceUrl = 'http://localhost:8089/reports/api/v2.0/CatalogItems';
+  protected resourceUrl = 'http://10.10.1.187/reports/api/v2.0/CatalogItems';
 
   constructor(protected http: HttpClient) {}
 

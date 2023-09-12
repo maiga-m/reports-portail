@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { IFolder } from 'src/app/models/folder.model';
 import { FolderService } from 'src/app/services/folder/folder.service';
@@ -12,8 +13,9 @@ export class DashboardComponent implements OnInit {
 
   folders: IFolder[] = [];
   items:any;
+  url = "http://10.10.1.187/reports/powerbi";
   
-  constructor(private elementRef: ElementRef, protected s: FolderService, private keycloackService: KeycloakService) { }
+  constructor(private sanitizer: DomSanitizer, private elementRef: ElementRef, protected s: FolderService, private keycloackService: KeycloakService) { }
 
   ngOnInit(): void {
 
@@ -42,6 +44,10 @@ export class DashboardComponent implements OnInit {
   public extractSubString(text: string): string {
     const splitArray = text.split(" - ");
     return splitArray[1] || ""; // Retourne la sous-chaîne ou une chaîne vide si elle est absente
+  }
+
+  transform(url: any) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

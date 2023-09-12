@@ -8,23 +8,12 @@
          </ol>
       </nav>
    </div>
-   <section class="section dashboard" style="height: 700px;">
+   <section class="section dashboard">
       <div class="row">
          <div class="col-lg-12">
             <div class="row"  *ngFor="let folder of folders">
-               <div class="col-xxl-2 col-md-4" *ngFor="let r of folder.catalogItems">
+               <div class="col-xxl-4 col-md-4" *ngFor="let r of folder.catalogItems">
                   <div class="card info-card sales-card" *ngIf="hasRole(folder.Name)">
-                     <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                           <li class="dropdown-header text-start">
-                              <h6>Filtrer</h6>
-                           </li>
-                           <li><a class="dropdown-item" href="#">Ajourd'hui</a></li>
-                           <li><a class="dropdown-item" href="#">Ce mois</a></li>
-                           <li><a class="dropdown-item" href="#">Cette année</a></li>
-                        </ul>
-                     </div>
                      <div class="card-body">
                         <a [routerLink]="['/show-report', r.Id ]">
                            <h5 class="card-title">{{ extractSubString(r.Name) }}</h5>
